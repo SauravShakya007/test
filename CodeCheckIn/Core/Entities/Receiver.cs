@@ -1,7 +1,10 @@
-﻿namespace CodeCheckIn.Core.Entities
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace CodeCheckIn.Core.Entities
 {
     public class Receiver
     {
+        [Key]
         public int Id { get; set; }
         public string SendTo { get; set; }
         

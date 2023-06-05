@@ -11,6 +11,8 @@ namespace CodeCheckIn.Core.AutoMapperConfig
         {
             //Mainpage
             CreateMap<CheckInCreateDto, MainPage>();
+            CreateMap<MainPage,CheckInGetDto>();
+
 
         }
         }

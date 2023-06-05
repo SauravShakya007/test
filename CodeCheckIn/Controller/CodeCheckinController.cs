@@ -4,6 +4,7 @@ using CodeCheckIn.Core.Dtos.MainPage;
 using CodeCheckIn.Core.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace CodeCheckIn.Controller
 {
@@ -13,7 +14,7 @@ namespace CodeCheckIn.Controller
     {
         private ApplicationDbContext _context { get; }
 
-        private IMapper _mapper;
+        private IMapper _mapper { get; }
 
         public CodeCheckinController(ApplicationDbContext context,IMapper mapper)
         {
@@ -33,6 +34,14 @@ namespace CodeCheckIn.Controller
         }
 
         //Read
+        [HttpGet]
+        [Route("get")]
+        public async Task<ActionResult<IEnumerable<CheckInGetDto>>> GetCheckIn()
+        {
+            var checkIns = await _context.MainPages.ToListAsync();
+            var convertedMainPages=_mapper.Map<IEnumerable<CheckInGetDto>>(checkIns);
+            return Ok(convertedMainPages);
+        }
         //Update
         //Delete
 

@@ -9,20 +9,21 @@ namespace CodeCheckIn.Core.Context
         {
         }
         public DbSet<MainPage> MainPages{ get; set; }
-        public DbSet<FilesURL> FilesURLs { get; set; }
         public DbSet<Receiver> Receivers { get; set; }
+        public object CheckIns { get; internal set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Receiver>()
                 .HasOne(receiver => receiver.MainPage)
                 .WithMany(mainpage => mainpage.SendTo)
-                .HasForeignKey(receiver => receiver.MainPage);
+                .HasForeignKey(receiver => receiver.SenderId);
 
-            modelBuilder.Entity<FilesURL>() //29:00
-                .HasOne(filesurl=> filesurl.MainPage)
-                .WithMany(mainpage=> mainpage.SpecificationDoc)
-                .HasForeignKey(filesurl=> filesurl.MainPage);
+            //modelBuilder.Entity<FilesURL>() //29:00
+            //    .HasOne(filesurl=> filesurl.MainPage)
+            //    .WithMany(mainpage=> mainpage.SpecificationDoc)
+            //    .HasForeignKey(filesurl=> filesurl.MainPage);
 
 
         }
