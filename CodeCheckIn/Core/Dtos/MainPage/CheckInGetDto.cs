@@ -5,6 +5,7 @@
         public int CodeId { get; set; }
         public string Subject { get; set; }
         public string From { get; set; }
+        public string SendTo { get; set; }
         public string Synopsis { get; set; }
         public string Description { get; set; }
         public string ImpactAnalysis { get; set; }

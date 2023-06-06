@@ -8,7 +8,7 @@ namespace CodeCheckIn.Core.Entities
         public long CodeId { get; set; }
         public string Subject { get; set; }
         public string From { get; set; }
-        public List<Receiver> SendTo { get; set; } //1:16:00
+        public string SendTo { get; set; } //1:16:00
         public string Synopsis { get; set; }
         public string Description { get; set; }
         public string ImpactAnalysis { get; set; }

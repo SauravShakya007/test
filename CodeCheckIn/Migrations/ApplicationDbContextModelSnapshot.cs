@@ -85,6 +85,10 @@ namespace CodeCheckIn.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("SendTo")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("SpecificationDoc")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -112,44 +116,6 @@ namespace CodeCheckIn.Migrations
                     b.HasKey("CodeId");
 
                     b.ToTable("MainPages");
-                });
-
-            modelBuilder.Entity("CodeCheckIn.Core.Entities.Receiver", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("SendTo")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<long>("SenderId")
-                        .HasColumnType("bigint");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("SenderId");
-
-                    b.ToTable("Receivers");
-                });
-
-            modelBuilder.Entity("CodeCheckIn.Core.Entities.Receiver", b =>
-                {
-                    b.HasOne("CodeCheckIn.Core.Entities.MainPage", "MainPage")
-                        .WithMany("SendTo")
-                        .HasForeignKey("SenderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("MainPage");
-                });
-
-            modelBuilder.Entity("CodeCheckIn.Core.Entities.MainPage", b =>
-                {
-                    b.Navigation("SendTo");
                 });
 #pragma warning restore 612, 618
         }

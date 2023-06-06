@@ -16,9 +16,9 @@ namespace CodeCheckIn.Core.AutoMapperConfig
             CreateMap<MainPage,CheckInGetDto>();
 
             //Receiver
-            CreateMap<ReceiverCreateDto, Receiver>();
-            CreateMap<Receiver, ReceiverGetDto>()
-                .ForMember(dest=>dest.From,opt=>opt.MapFrom(src=>src.MainPage.From));
+        //    CreateMap<ReceiverCreateDto, Receiver>();
+        //    CreateMap<Receiver, ReceiverGetDto>()
+        //        .ForMember(dest=>dest.From,opt=>opt.MapFrom(src=>src.MainPage.From));
         }
         }
 }

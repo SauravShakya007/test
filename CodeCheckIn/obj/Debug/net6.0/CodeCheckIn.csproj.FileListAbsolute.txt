@@ -87,3 +87,8 @@ C:\Users\Saurav.shakya\source\repos\CodeCheckIn\CodeCheckIn\obj\Debug\net6.0\ref
 C:\Users\Saurav.shakya\source\repos\CodeCheckIn\CodeCheckIn\obj\Debug\net6.0\CodeCheckIn.pdb
 C:\Users\Saurav.shakya\source\repos\CodeCheckIn\CodeCheckIn\obj\Debug\net6.0\CodeCheckIn.genruntimeconfig.cache
 C:\Users\Saurav.shakya\source\repos\CodeCheckIn\CodeCheckIn\obj\Debug\net6.0\ref\CodeCheckIn.dll
+C:\Users\Saurav.shakya\source\repos\CodeCheckIn\CodeCheckIn\bin\Debug\net6.0\BouncyCastle.Cryptography.dll
+C:\Users\Saurav.shakya\source\repos\CodeCheckIn\CodeCheckIn\bin\Debug\net6.0\MailKit.dll
+C:\Users\Saurav.shakya\source\repos\CodeCheckIn\CodeCheckIn\bin\Debug\net6.0\MimeKit.dll
+C:\Users\Saurav.shakya\source\repos\CodeCheckIn\CodeCheckIn\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\Saurav.shakya\source\repos\CodeCheckIn\CodeCheckIn\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
