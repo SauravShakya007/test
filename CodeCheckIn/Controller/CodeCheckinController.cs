@@ -43,10 +43,28 @@ namespace CodeCheckIn.Controller
             }
             //email.To.Add(MailboxAddress.Parse(dto.SendTo));
             email.Subject = dto.Subject;
-            email.Body = new TextPart(MimeKit.Text.TextFormat.Html) { Text = dto.Description};
+            email.Body = new TextPart(MimeKit.Text.TextFormat.Html) { Text = $"<p><h3>Summary: </h3>{dto.Synopsis}</p>" +
+                $"<p><h3>Description:</h3> {dto.Description}</p>" +
+                $"<p><h3>Impact Analaysis: </h3>{dto.ImpactAnalysis}</p>" +
+                $"<p><h3>Deployment Document:</h3> {dto.DeploymentDocument}</p>" +
+                $"<p><h3>Unit Test</h3>{dto.UnitTest}<h3></p>" +
+                $"<p><h3>Files Added:</h3> {dto.FilesAdded}</p>" +
+                $"<p><h3>Files Modified:</h3> {dto.FilesModified}</p>" +
+                $"<p><h3>Files Deleted:</h3> {dto.FilesDeleted}</p>" +
+                $"<p><h3>Git Branch:</h3> {dto.GitBranch}</p>" +
+                $"<p><h3>Git Revision:</h3> {dto.GitRevision}</p>" +
+                $"<p><h3>Pull Request:</h3> {dto.PullRequest}</p>" +
+                $"<p><h3>Code Reviewed By:</h3> {dto.CodeReviewedBy}</p>" +
+                $"$<p><h3>Target Version:</h3> {dto.TargetVersion}</p>" +
+                $"$<p><h3>Specification Document:</h3> {dto.SpecificationDoc}</p>\"" +
+                $"$<p><h3>Technical Document:</h3> {dto.TechnicalDoc}</p>" +
+                $"$<p><h3>Scenarios:</h3> {dto.Scenarios}</p>" +
+                $"$<p><h3>Notes:</h3> {dto.Notes}</p>" 
+
+            };
             using var smtp = new SmtpClient();
             smtp.Connect("outlook.office365.com", 587, MailKit.Security.SecureSocketOptions.StartTls); // eta outlook to lagi bhako server use garne
-            smtp.Authenticate("puran.gurung@cedargate.com", "pw"); //add user pw here
+            smtp.Authenticate("puran.gurung@cedargate.com", "Narup@@Narup"); //add user pw here
             smtp.Send(email);
             smtp.Disconnect(true);
 

@@ -1,8 +1,7 @@
 ﻿namespace CodeCheckIn.Core.Dtos.MainPage
 {
     public class CheckInGetDto
-    {
-        public int CodeId { get; set; }
+    { 
         public string Subject { get; set; }
         public string From { get; set; }
         public string SendTo { get; set; }
@@ -23,6 +22,6 @@
         public string TechnicalDoc { get; set; }
         public string Scenarios { get; set; }
         public string Notes { get; set; }
-        public DateTime CreatedAt { get; set; } = DateTime.Now;
+
     }
 }
